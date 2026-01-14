@@ -1,6 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import BasicInfo from '@/components/sections/BasicInfo';
 import SnapPhotos from '@/components/sections/SnapPhotos';
+import LocationGuide from '@/components/sections/LocationGuide';
 import MusicToggle from '@/components/common/MusicToggle';
 
 export default function Home() {
@@ -11,6 +12,10 @@ export default function Home() {
   const weddingTime = process.env.NEXT_PUBLIC_WEDDING_TIME || '11:00';
   const weddingPlace = process.env.NEXT_PUBLIC_WEDDING_PLACE || '대전 BNK 웨딩홀';
   const weddingAddress = process.env.NEXT_PUBLIC_WEDDING_ADDRESS || '대전시 중구 대종로 480번길 15';
+  const weddingLat = Number(process.env.NEXT_PUBLIC_WEDDING_LAT) || 36.3263;
+  const weddingLng = Number(process.env.NEXT_PUBLIC_WEDDING_LNG) || 127.4256;
+  const parkingInfo = process.env.NEXT_PUBLIC_PARKING_INFO;
+  const transportInfo = process.env.NEXT_PUBLIC_TRANSPORT_INFO;
 
   // 배경 음악 URL
   const musicUrls = [
@@ -37,6 +42,15 @@ export default function Home() {
       />
 
       <SnapPhotos />
+
+      <LocationGuide
+        place={weddingPlace}
+        address={weddingAddress}
+        lat={weddingLat}
+        lng={weddingLng}
+        parkingInfo={parkingInfo}
+        transportInfo={transportInfo}
+      />
 
       {/* 배경 음악 토글 버튼 */}
       {musicUrls.length > 0 && <MusicToggle musicUrls={musicUrls} />}
