@@ -8,13 +8,13 @@
 
 ## Phase 1: 기본 구조 & 환경 설정
 
-- [ ] Next.js 14+ 프로젝트 초기 설정 (TypeScript, ESLint)
+- [x] Next.js 14+ 프로젝트 초기 설정 (TypeScript, ESLint)
 - [ ] Tailwind CSS + styled-components 설치 및 설정
 - [ ] shadcn/ui 설치 및 기본 컴포넌트 설정
 - [ ] 환경 변수 설정 (.env.local 파일 생성)
 - [ ] 프로젝트 디렉토리 구조 생성 (components, lib, types, styles)
 - [ ] TypeScript 타입 정의 파일 작성 (attendance.ts, guestbook.ts, settings.ts, common.ts)
-- [ ] 반응형 디자인 브레이크포인트 설정 (Tailwind config)
+- [x] 반응형 디자인 브레이크포인트 설정 (Tailwind config)
 
 ---
 
@@ -80,12 +80,22 @@
 ## 진행 상황
 
 - **총 작업 수**: 41개
-- **Phase 1**: 7개 작업
-- **Phase 2**: 6개 작업
-- **Phase 3**: 8개 작업
-- **Phase 4**: 6개 작업
-- **Phase 5**: 7개 작업
-- **Phase 6**: 7개 작업
+- **완료**: 2개 ✅
+- **진행률**: 4.9%
+
+### Phase별 진행 상황
+- **Phase 1**: 2/7 완료 (28.6%)
+- **Phase 2**: 0/6 완료 (0%)
+- **Phase 3**: 0/8 완료 (0%)
+- **Phase 4**: 0/6 완료 (0%)
+- **Phase 5**: 0/7 완료 (0%)
+- **Phase 6**: 0/7 완료 (0%)
+
+---
+
+## 추가 작업 완료
+
+- [x] 패키지 매니저를 npm에서 pnpm으로 변경 (2026-01-14)
 
 ---
 
@@ -119,4 +129,5 @@
 ---
 
 **작성일**: 2026-01-14
-**최종 수정**: 2026-01-14
+**최종 수정**: 2026-01-14 12:10 UTC
+**완료 작업**: Phase 1-1, Phase 1-7, pnpm 마이그레이션
