@@ -6,14 +6,14 @@
 
 ---
 
-## Phase 1: 기본 구조 & 환경 설정
+## Phase 1: 기본 구조 & 환경 설정 ✅
 
 - [x] Next.js 14+ 프로젝트 초기 설정 (TypeScript, ESLint)
-- [ ] Tailwind CSS + styled-components 설치 및 설정
-- [ ] shadcn/ui 설치 및 기본 컴포넌트 설정
-- [ ] 환경 변수 설정 (.env.local 파일 생성)
-- [ ] 프로젝트 디렉토리 구조 생성 (components, lib, types, styles)
-- [ ] TypeScript 타입 정의 파일 작성 (attendance.ts, guestbook.ts, settings.ts, common.ts)
+- [x] Tailwind CSS + styled-components 설치 및 설정
+- [x] shadcn/ui 설치 및 기본 컴포넌트 설정
+- [x] 환경 변수 설정 (.env.local 파일 생성)
+- [x] 프로젝트 디렉토리 구조 생성 (components, lib, types, styles)
+- [x] TypeScript 타입 정의 파일 작성 (attendance.ts, guestbook.ts, settings.ts, common.ts)
 - [x] 반응형 디자인 브레이크포인트 설정 (Tailwind config)
 
 ---
@@ -80,11 +80,11 @@
 ## 진행 상황
 
 - **총 작업 수**: 41개
-- **완료**: 2개 ✅
-- **진행률**: 4.9%
+- **완료**: 7개 ✅
+- **진행률**: 17.1%
 
 ### Phase별 진행 상황
-- **Phase 1**: 2/7 완료 (28.6%)
+- **Phase 1**: 7/7 완료 (100%) ✅
 - **Phase 2**: 0/6 완료 (0%)
 - **Phase 3**: 0/8 완료 (0%)
 - **Phase 4**: 0/6 완료 (0%)
@@ -96,6 +96,12 @@
 ## 추가 작업 완료
 
 - [x] 패키지 매니저를 npm에서 pnpm으로 변경 (2026-01-14)
+- [x] styled-components 설치 및 Next.js 설정 (2026-01-14)
+- [x] 모바일 최적화 글로벌 CSS 스타일 작성 (2026-01-14)
+- [x] shadcn/ui 설정 및 기본 컴포넌트 5개 추가 (2026-01-14)
+- [x] TypeScript 타입 정의 4개 파일 작성 (2026-01-14)
+- [x] 환경 변수 템플릿 (.env.example) 작성 (2026-01-14)
+- [x] TODO 진행도 뷰어 HTML 작성 (2026-01-14)
 
 ---
 
@@ -129,5 +135,6 @@
 ---
 
 **작성일**: 2026-01-14
-**최종 수정**: 2026-01-14 12:10 UTC
-**완료 작업**: Phase 1-1, Phase 1-7, pnpm 마이그레이션
+**최종 수정**: 2026-01-14 13:30 UTC
+**완료 작업**: Phase 1 완료 (7/7), pnpm 마이그레이션
+**최근 커밋**: 7개 커밋 (styled-components, CSS, shadcn/ui, 타입 정의, 환경 변수, TODO 뷰어)
