@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero';
 import BasicInfo from '@/components/sections/BasicInfo';
+import SnapPhotos from '@/components/sections/SnapPhotos';
 import MusicToggle from '@/components/common/MusicToggle';
 
 export default function Home() {
@@ -34,6 +35,8 @@ export default function Home() {
         weddingPlace={weddingPlace}
         weddingAddress={weddingAddress}
       />
+
+      <SnapPhotos />
 
       {/* 배경 음악 토글 버튼 */}
       {musicUrls.length > 0 && <MusicToggle musicUrls={musicUrls} />}
