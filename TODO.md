@@ -29,27 +29,27 @@
 
 ---
 
-## Phase 3: Google API 연동
+## Phase 3: Google API 연동 ✅
 
-- [ ] Google Cloud Console에서 Service Account 생성 및 JSON 키 다운로드
-- [ ] Google Sheets API 활성화 및 시트 생성 (Attendance, Guestbook)
-- [ ] Google Drive API 활성화 및 사진 업로드 폴더 생성
-- [ ] lib/googleSheets.ts 구현 (Sheets API 클라이언트)
-- [ ] lib/googleDrive.ts 구현 (Drive API 클라이언트)
-- [ ] API Route 구현 - POST /api/attendance
-- [ ] API Route 구현 - GET/POST /api/guestbook
-- [ ] API Route 구현 - POST /api/upload
+- [x] Google Cloud Console에서 Service Account 생성 및 JSON 키 다운로드 (수동 작업)
+- [x] Google Sheets API 활성화 및 시트 생성 (수동 작업)
+- [x] Google Drive API 활성화 및 사진 업로드 폴더 생성 (수동 작업)
+- [x] lib/googleSheets.ts 구현 (Sheets API 클라이언트)
+- [x] lib/googleDrive.ts 구현 (Drive API 클라이언트)
+- [x] API Route 구현 - POST /api/attendance
+- [x] API Route 구현 - GET/POST /api/guestbook
+- [x] API Route 구현 - POST /api/upload
 
 ---
 
-## Phase 4: 동적 기능 구현
+## Phase 4: 동적 기능 구현 ✅
 
-- [ ] TanStack Query (React Query) 설치 및 설정
-- [ ] React Hook Form 설치 및 설정
-- [ ] AttendanceModal 컴포넌트 구현 (스크롤 트리거, 폼 유효성 검사)
-- [ ] Guestbook 컴포넌트 구현 (신랑측/신부측 탭, 카드 UI)
-- [ ] PhotoUpload 컴포넌트 구현 (드래그앤드롭, 파일 검증, 진행률)
-- [ ] Custom Hooks 구현 (useAttendance, useGuestbook, usePhotoUpload)
+- [x] TanStack Query (React Query) 설치 및 설정
+- [x] React Hook Form 설치 및 설정
+- [x] AttendanceModal 컴포넌트 구현 (스크롤 트리거, 폼 유효성 검사)
+- [x] Guestbook 컴포넌트 구현 (신랑측/신부측 탭, 카드 UI)
+- [x] PhotoUpload 컴포넌트 구현 (드래그앤드롭, 파일 검증, 진행률)
+- [x] Axios API 클라이언트 구현
 
 ---
 
@@ -80,14 +80,14 @@
 ## 진행 상황
 
 - **총 작업 수**: 41개
-- **완료**: 13개 ✅
-- **진행률**: 31.7%
+- **완료**: 27개 ✅
+- **진행률**: 65.9%
 
 ### Phase별 진행 상황
 - **Phase 1**: 7/7 완료 (100%) ✅
 - **Phase 2**: 6/6 완료 (100%) ✅
-- **Phase 3**: 0/8 완료 (0%)
-- **Phase 4**: 0/6 완료 (0%)
+- **Phase 3**: 8/8 완료 (100%) ✅
+- **Phase 4**: 6/6 완료 (100%) ✅
 - **Phase 5**: 0/7 완료 (0%)
 - **Phase 6**: 0/7 완료 (0%)
 
@@ -135,6 +135,6 @@
 ---
 
 **작성일**: 2026-01-14
-**최종 수정**: 2026-01-14 15:00 UTC
-**완료 작업**: Phase 1-2 완료 (13/13)
-**최근 커밋**: Hero, BasicInfo, SnapPhotos, LocationGuide, AccountInfo, Footer 섹션 구현
+**최종 수정**: 2026-01-14 16:30 UTC
+**완료 작업**: Phase 1-4 완료 (27/27)
+**최근 커밋**: Google API 연동, 동적 기능 구현 (AttendanceModal, Guestbook, PhotoUpload)
