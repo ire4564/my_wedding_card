@@ -85,13 +85,15 @@ export default function LocationGuide({
 
   // 카카오맵 길찾기
   const openKakaoMap = () => {
-    const url = `https://map.kakao.com/link/to/${place},${lat},${lng}`;
+    const encodedPlace = encodeURIComponent(place);
+    const url = `https://map.kakao.com/link/to/${encodedPlace},${lat},${lng}`;
     window.open(url, '_blank');
   };
 
   // 네이버 지도 길찾기
   const openNaverMap = () => {
-    const url = `https://map.naver.com/v5/directions/-/-/-/car?c=${lng},${lat},15,0,0,0,dh`;
+    const encodedPlace = encodeURIComponent(place);
+    const url = `https://map.naver.com/v5/search/${encodedPlace}`;
     window.open(url, '_blank');
   };
 
