@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "이현준 & 김도희 결혼식 초대장",
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
