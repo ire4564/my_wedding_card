@@ -51,23 +51,34 @@ export default function AccountInfo({ groomAccount, brideAccount }: AccountInfoP
   };
 
   // 카카오페이 송금 (모바일만)
-  const openKakaoPay = () => {
+  const openKakaoPay = (account: AccountData) => {
     if (!isMobile()) {
       alert('카카오페이는 모바일 기기에서만 사용 가능합니다.');
       return;
     }
-    // 실제 카카오페이 링크는 Phase 5에서 구현
-    alert('카카오페이 송금 기능은 추후 구현 예정입니다.');
+    // 카카오페이 송금 URL (실제 앱 실행)
+    const kakaoPayUrl = `https://qr.kakaopay.com/`;
+    window.location.href = kakaoPayUrl;
   };
 
   // 토스 송금 (모바일만)
-  const openToss = () => {
+  const openToss = (account: AccountData) => {
     if (!isMobile()) {
       alert('토스는 모바일 기기에서만 사용 가능합니다.');
       return;
     }
-    // 실제 토스 링크는 Phase 5에서 구현
-    alert('토스 송금 기능은 추후 구현 예정입니다.');
+    // 토스 송금 딥링크
+    const tossUrl = `supertoss://send?bank=${encodeURIComponent(account.bank)}&accountNo=${encodeURIComponent(account.accountNumber)}&depositorName=${encodeURIComponent(account.owner)}`;
+    window.location.href = tossUrl;
+
+    // 앱이 설치되지 않은 경우 스토어로 이동
+    setTimeout(() => {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const storeUrl = isAndroid
+        ? 'https://play.google.com/store/apps/details?id=viva.republica.toss'
+        : 'https://apps.apple.com/kr/app/toss/id839333328';
+      window.location.href = storeUrl;
+    }, 1500);
   };
 
   return (
@@ -100,6 +111,26 @@ export default function AccountInfo({ groomAccount, brideAccount }: AccountInfoP
               <Copy className="w-4 h-4" />
               {copiedGroom ? '복사 완료!' : '계좌번호 복사'}
             </Button>
+
+            <div className="flex gap-2">
+              <Button
+                onClick={() => openKakaoPay(groom)}
+                variant="default"
+                className="flex-1 gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900"
+              >
+                <Smartphone className="w-4 h-4" />
+                카카오페이
+              </Button>
+
+              <Button
+                onClick={() => openToss(groom)}
+                variant="default"
+                className="flex-1 gap-2 bg-blue-500 hover:bg-blue-600 text-white"
+              >
+                <Smartphone className="w-4 h-4" />
+                토스
+              </Button>
+            </div>
           </div>
         </Card>
 
@@ -126,29 +157,28 @@ export default function AccountInfo({ groomAccount, brideAccount }: AccountInfoP
               <Copy className="w-4 h-4" />
               {copiedBride ? '복사 완료!' : '계좌번호 복사'}
             </Button>
+
+            <div className="flex gap-2">
+              <Button
+                onClick={() => openKakaoPay(bride)}
+                variant="default"
+                className="flex-1 gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900"
+              >
+                <Smartphone className="w-4 h-4" />
+                카카오페이
+              </Button>
+
+              <Button
+                onClick={() => openToss(bride)}
+                variant="default"
+                className="flex-1 gap-2 bg-blue-500 hover:bg-blue-600 text-white"
+              >
+                <Smartphone className="w-4 h-4" />
+                토스
+              </Button>
+            </div>
           </div>
         </Card>
-      </div>
-
-      {/* 간편 송금 버튼 (모바일만) */}
-      <div className="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-        <Button
-          onClick={openKakaoPay}
-          variant="default"
-          className="flex-1 gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900"
-        >
-          <Smartphone className="w-4 h-4" />
-          카카오페이 송금
-        </Button>
-
-        <Button
-          onClick={openToss}
-          variant="default"
-          className="flex-1 gap-2 bg-blue-500 hover:bg-blue-600 text-white"
-        >
-          <Smartphone className="w-4 h-4" />
-          토스 송금
-        </Button>
       </div>
     </section>
   );
