@@ -2,6 +2,7 @@ import Hero from '@/components/sections/Hero';
 import BasicInfo from '@/components/sections/BasicInfo';
 import SnapPhotos from '@/components/sections/SnapPhotos';
 import LocationGuide from '@/components/sections/LocationGuide';
+import AttendanceModal from '@/components/sections/AttendanceModal';
 import AccountInfo from '@/components/sections/AccountInfo';
 import Footer from '@/components/sections/Footer';
 import MusicToggle from '@/components/common/MusicToggle';
@@ -61,6 +62,9 @@ export default function Home() {
       <AccountInfo groomAccount={groomAccount} brideAccount={brideAccount} />
 
       <Footer groomName={groomName} brideName={brideName} />
+
+      {/* 참석 여부 확인 모달 */}
+      <AttendanceModal />
 
       {/* 배경 음악 토글 버튼 */}
       {musicUrls.length > 0 && <MusicToggle musicUrls={musicUrls} />}
