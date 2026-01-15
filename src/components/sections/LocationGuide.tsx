@@ -2,7 +2,13 @@
 
 import { MapPin, Copy, Navigation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
 
 interface LocationGuideProps {
   place: string;
@@ -22,6 +28,49 @@ export default function LocationGuide({
   transportInfo,
 }: LocationGuideProps) {
   const [copied, setCopied] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
+
+  // 카카오맵 초기화
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    const loadKakaoMap = () => {
+      if (window.kakao && window.kakao.maps) {
+        window.kakao.maps.load(() => {
+          const container = mapRef.current;
+          const options = {
+            center: new window.kakao.maps.LatLng(lat, lng),
+            level: 3,
+          };
+
+          const map = new window.kakao.maps.Map(container, options);
+
+          // 마커 추가
+          const markerPosition = new window.kakao.maps.LatLng(lat, lng);
+          const marker = new window.kakao.maps.Marker({
+            position: markerPosition,
+          });
+          marker.setMap(map);
+
+          // 인포윈도우 추가
+          const infowindow = new window.kakao.maps.InfoWindow({
+            content: `<div style="padding:10px;font-size:14px;text-align:center;"><strong>${place}</strong></div>`,
+          });
+          infowindow.open(map, marker);
+        });
+      }
+    };
+
+    // 스크립트 로드 대기
+    const checkKakaoMap = setInterval(() => {
+      if (window.kakao && window.kakao.maps) {
+        clearInterval(checkKakaoMap);
+        loadKakaoMap();
+      }
+    }, 100);
+
+    return () => clearInterval(checkKakaoMap);
+  }, [lat, lng, place]);
 
   // 주소 복사
   const copyAddress = async () => {
@@ -61,10 +110,8 @@ export default function LocationGuide({
         <p className="text-sm text-gray-600">{address}</p>
       </div>
 
-      {/* 지도 placeholder (Phase 5에서 Kakao Map 추가 예정) */}
-      <div className="w-full h-64 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-        <p className="text-gray-500 text-sm">지도가 여기에 표시됩니다</p>
-      </div>
+      {/* 카카오 지도 */}
+      <div ref={mapRef} className="w-full h-64 bg-gray-200 rounded-lg mb-6" />
 
       {/* 주소 복사 및 길찾기 버튼 */}
       <div className="flex flex-col sm:flex-row gap-3 mb-8">
