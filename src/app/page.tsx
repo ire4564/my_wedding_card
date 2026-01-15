@@ -3,6 +3,7 @@ import BasicInfo from '@/components/sections/BasicInfo';
 import SnapPhotos from '@/components/sections/SnapPhotos';
 import LocationGuide from '@/components/sections/LocationGuide';
 import AttendanceModal from '@/components/sections/AttendanceModal';
+import Guestbook from '@/components/sections/Guestbook';
 import AccountInfo from '@/components/sections/AccountInfo';
 import Footer from '@/components/sections/Footer';
 import MusicToggle from '@/components/common/MusicToggle';
@@ -58,6 +59,8 @@ export default function Home() {
         parkingInfo={parkingInfo}
         transportInfo={transportInfo}
       />
+
+      <Guestbook />
 
       <AccountInfo groomAccount={groomAccount} brideAccount={brideAccount} />
 
